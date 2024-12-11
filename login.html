@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-image: url(./images/2.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            color: #74244b;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }   
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-button {
+            background-color: #860d5c; /* Màu hồng */
+            color: white;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 50px; /* Bo tròn góc */
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+            transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển màu và phóng to khi hover */
+        }
+
+        .back-button:hover {
+            background-color: #f07eb3; /* Màu hồng đậm khi hover */
+            transform: scale(1.05); /* Tăng kích thước khi hover */
+        }
+
+        .back-button:active {
+            transform: scale(1); /* Khi nhấn, khôi phục kích thước */
+        }
+
+        .text-center p {
+            padding-left: 50px;
+            font-size: 15px; /* Tăng kích thước chữ */
+            line-height: 3; /* Tăng khoảng cách giữa các dòng */
+            margin: 0;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Đăng Nhập</h2>
+        <form class="mt-4">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email: </label>
+                <input type="email" class="form-control" id="email" placeholder="Nhập Email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Mật Khẩu:</label>
+                <input type="password" class="form-control" id="password" placeholder="Nhập Mật Khẩu">
+            </div>
+            <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+        </form>
+
+        <div class="text-center mt-3">
+           <p> Chưa có tài khoản? <a href="sign_up.html">Đăng Ký ngay</a></p>
+        </div>
+
+        <footer>
+            <a href="main.html" class="back-button">Quay Về Trang Chủ</a>
+        </footer>
+        
+    </div>
+</body>
+</html>

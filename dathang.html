@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec; /* Màu nền hồng nhẹ */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        h1, h2 {
+            color: #830843; /* Màu hồng đậm cho tiêu đề */
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8bbd0; /* Màu hồng nhạt cho header của bảng */
+            color: #e84393;
+        }
+
+        td {
+            background-color: #fce4ec;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            color: #e84393;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .order-button {
+            width: 100%;
+            padding: 15px;
+            background-color: #e84393; /* Màu hồng đậm cho nút */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .order-button:hover {
+            background-color: #e84393; /* Màu hồng khi hover */
+        }
+
+        .back-home-button {
+            width: 100%;
+            padding: 15px;
+            background-color: #e84393; /* Màu sắc nút quay lại */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .back-home-button:hover {
+            background-color: #e84393; /* Màu sắc khi hover */
+        }
+
+        .form-group input, .form-group select {
+            box-sizing: border-box;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-button {
+            background-color: #42072e; /* Màu hồng */
+            color: white;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 50px; /* Bo tròn góc */
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+            transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển màu và phóng to khi hover */
+        }
+
+        .back-button:hover {
+            background-color: #f07eb3; /* Màu hồng đậm khi hover */
+            transform: scale(1.05); /* Tăng kích thước khi hover */
+        }
+
+        .back-button:active {
+            transform: scale(1); /* Khi nhấn, khôi phục kích thước */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Đặt Hàng</h1>
+        <section id="cart">
+            <h2>Giỏ Hàng</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tên Sản Phẩm</th>
+                        <th>Giá</th>
+                        <th>Số Lượng</th>
+                        <th>Tổng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sản phẩm 1</td>
+                        <td>100.000 VNĐ</td>
+                        <td>2</td>
+                        <td>200.000 VNĐ</td>
+                    </tr>
+                    <tr>
+                        <td>Sản phẩm 2</td>
+                        <td>150.000 VNĐ</td>
+                        <td>1</td>
+                        <td>150.000 VNĐ</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: right;"><strong>Tổng cộng:</strong></td>
+                        <td><strong>350.000 VNĐ</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="shipping-info">
+            <h2>Thông Tin Giao Hàng</h2>
+            <form>
+                <div class="form-group">
+                    <label for="fullname">Họ và tên:</label>
+                    <input type="text" id="fullname" placeholder="Nhập họ và tên" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Địa chỉ giao hàng:</label>
+                    <input type="text" id="address" placeholder="Nhập địa chỉ" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Số điện thoại:</label>
+                    <input type="tel" id="phone" placeholder="Nhập số điện thoại" required>
+                </div>
+            </form>
+        </section>
+
+        <section id="payment-method">
+            <h2>Phương Thức Thanh Toán</h2>
+            <form>
+                <div class="form-group">
+                    <label for="payment-method">Chọn phương thức:</label>
+                    <select id="payment-method" required>
+                        <option value="">-- Chọn phương thức --</option>
+                        <option value="credit-card">Thẻ tín dụng</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="cash-on-delivery">Thanh toán khi nhận hàng</option>
+                    </select>
+                </div>
+            </form>
+        </section>
+
+        <button type="submit" class="order-button">Đặt Hàng</button>
+        <footer>
+            <a href="main.html" class="back-button">Quay Về Trang Chủ</a>
+        </footer>
+    </div>
+</body>
+</html>

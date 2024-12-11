@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Thông Tin Người Dùng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column; /* Thêm điều này để bố trí theo cột */
+            justify-content: space-between; /* Đảm bảo nội dung chiếm không gian và footer ở dưới cùng */
+            min-height: 100vh; /* Đảm bảo chiều cao của trang ít nhất là 100% chiều cao cửa sổ */
+            background-image: url(./images/1.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background:rgb(251, 249, 250);
+            color:#d670bd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #f155e1;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #6f1c5d;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .deleteUserBtn, .deleteProductBtn {
+            background-color: #ff6fb3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .deleteUserBtn:hover, .deleteProductBtn:hover {
+            background-color: #ff4da6;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .edit-button {
+            background-color: #f5c0f0;
+            color: rgb(112, 79, 112);
+        }
+
+        .edit-button:hover {
+            background-color: #6f1c5d;
+        }
+
+        .delete-button {
+            background-color: #8d2468;
+            color: white;
+            margin-left: 5px;
+        } 
+
+        .add-button{
+            color: #fff;
+            background: #6f1c5d;
+        }
+        .save-button{
+            color: #fff;
+            background: #6f1c5d;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-button {
+            background-color: #f155e1; /* Màu hồng */
+            color: white;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 50px; /* Bo tròn góc */
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+            transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển màu và phóng to khi hover */
+        }
+
+        .back-button:hover {
+            background-color: #f07eb3; /* Màu hồng đậm khi hover */
+            transform: scale(1.05); /* Tăng kích thước khi hover */
+        }
+
+        .back-button:active {
+            transform: scale(1); /* Khi nhấn, khôi phục kích thước */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quản Lý Thông Tin </h1>
+        <section id="user-management">
+            <h2>Danh Sách Người Dùng</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Họ và Tên</th>
+                        <th>Email</th>
+                        <th>Số Điện Thoại</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nguyễn Văn A</td>
+                        <td>nguyenvana@gmail.com</td>
+                        <td>0123456789</td>
+                        <td>
+                            <button class="edit-button">Chỉnh Sửa</button>
+                            <button class="deleteUserBtn">Xóa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Trần Thị B</td>
+                        <td>tranthib@gmail.com</td>
+                        <td>0987654321</td>
+                        <td>
+                            <button class="edit-button">Chỉnh Sửa</button>
+                            <button class="deleteUserBtn">Xóa</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="product-management">
+            <h2>Danh Sách Sản Phẩm</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tên Sản Phẩm</th>
+                        <th>Giá</th>
+                        <th>Số Lượng</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sản phẩm 1</td>
+                        <td>100.000 VNĐ</td>
+                        <td>50</td>
+                        <td>
+                            <button class="edit-button">Chỉnh Sửa</button>
+                            <button class="deleteProductBtn">Xóa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sản phẩm 2</td>
+                        <td>150.000 VNĐ</td>
+                        <td>30</td>
+                        <td>
+                            <button class="edit-button">Chỉnh Sửa</button>
+                            <button class="deleteProductBtn">Xóa</button>
+                        </td>
+                    </tr>
+                    <!-- Thêm các hàng sản phẩm khác tại đây -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="add-product">
+            <h2>Thêm Sản Phẩm Mới</h2>
+            <form>
+                <div class="form-group">
+                    <label for="product-name">Tên Sản Phẩm:</label>
+                    <input type="text" id="product-name" placeholder="Nhập tên sản phẩm" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-price">Giá:</label>
+                    <input type="number" id="product-price" placeholder="Nhập giá sản phẩm" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-quantity">Số Lượng:</label>
+                    <input type="number" id="product-quantity" placeholder="Nhập số lượng" required>
+                </div>
+                <button type="submit" class="add-button">Thêm Sản Phẩm</button>
+            </form>
+        </section>
+
+        <section id="edit-product">
+            <h2>Chỉnh Sửa Thông Tin Sản Phẩm</h2>
+            <form>
+                <div class="form-group">
+                    <label for="edit-product-name">Tên Sản Phẩm:</label>
+                    <input type="text" id="edit-product-name" placeholder="Nhập tên sản phẩm" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-product-price">Giá:</label>
+                    <input type="number" id="edit-product-price" placeholder="Nhập giá sản phẩm" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-product-quantity">Số Lượng:</label>
+                    <input type="number" id="edit-product-quantity" placeholder="Nhập số lượng" required>
+                </div>
+                <button type="submit" class="save-button">Lưu Thay Đổi</button>
+            </form>
+        </section>
+    </section>
+
+    
+    </div>
+
+    <footer>
+        <a href="main.html" class="back-button">Quay Về Trang Chủ</a>
+    </footer>
+
+    <!-- Thêm liên kết đến thư viện jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Xóa người dùng với xác nhận
+            $(document).on('click', '.deleteUserBtn', function () {
+                if (confirm('Bạn có chắc chắn muốn xóa người dùng này không?')) {
+                    $(this).closest('tr').remove();
+                }
+            });
+
+            // Xóa sản phẩm với xác nhận
+            $(document).on('click', '.deleteProductBtn', function () {
+                if (confirm('Bạn có chắc chắn muốn xóa sản phẩm này không?')) {
+                    $(this).closest('tr').remove();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
